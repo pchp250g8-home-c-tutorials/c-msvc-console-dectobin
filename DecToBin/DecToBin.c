@@ -1,8 +1,6 @@
 ﻿// DecToBin.c : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 #define _CRT_SECURE_NO_WARNINGS
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -11,10 +9,18 @@
 
 int main(int argc, char* argv[])
 {
-    uint32_t uDecNumber, uTempVal,nBinaryDigits = 0;
+    long uDecNumber, uTempVal;
+    unsigned int nBinaryDigits = 0;
     char* szBinaryNum;
     printf("Input an unsigned integer number\r\n");
-    fscanf(stdin, "%u", &uDecNumber);
+    scanf("%lu", &uDecNumber);
+    if (uDecNumber < 0 || uDecNumber > UINT32_MAX)
+    {
+        printf("Incorrect number format\r\n");
+        getchar();
+        getc(stdin);
+        return 0;
+    }
     uTempVal = uDecNumber;
     while (uTempVal > 0)
     {
