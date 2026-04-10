@@ -39,12 +39,12 @@ int main(int argc, char* argv[])
             szBinaryNum[nBinaryDigits - 1 - i] = chBinDighit;
             uTempVal /= 2;
         }
-        printf("The binary equivalent of the numner %u is %s\r\n",uDecNumber,szBinaryNum);
+        printf("The binary equivalent of the decimal numner %u is %s\r\n",uDecNumber,szBinaryNum);
         free(szBinaryNum);
     }
     else
     {
-        printf("The binary equivalent of the number %u is 0\r\n", uDecNumber);
+        printf("The binary equivalent of the decimal number %u is 0\r\n", uDecNumber);
     }
     getchar();
     getc(stdin);
